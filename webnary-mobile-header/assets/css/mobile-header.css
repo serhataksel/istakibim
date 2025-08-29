@@ -1,0 +1,51 @@
+/* Webnary Mobile Header Styles */
+.wn-scope{--brand:#0349EF;--brand-light:#2563EB;--ink:#111827;--muted:#6b7280;--bg:#fff;--bg-soft:#f9fafb;--border:#e5e7eb;--ease-out-expo:cubic-bezier(.16,1,.3,1);--ease-in-out:cubic-bezier(.65,0,.35,1);position:relative;z-index:1;-webkit-tap-highlight-color:transparent;display:none}
+@media (max-width:1024px){.wn-scope{display:block}}
+.wn-scope,.wn-scope *,.wn-scope *::before,.wn-scope *::after{box-sizing:border-box}
+.wn-scope a{color:inherit;text-decoration:none}
+.wn-scope svg{display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wn-scope .wn-toggle{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wn-scope .wn-backdrop{position:fixed;inset:0;background:rgba(17,24,39,.6);z-index:9998;opacity:0;visibility:hidden;transition:opacity .35s var(--ease-in-out),visibility 0s .35s}
+.wn-scope #wn-nav-toggle:checked ~ .wn-backdrop{opacity:1;visibility:visible;transition-delay:0s}
+.wn-scope .wn-header{position:sticky;top:0;z-index:10000;background:var(--bg);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border)}
+.wn-scope .wn-brand img{height:28px;width:auto;display:block}
+.wn-scope .wn-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;padding:0;cursor:pointer;background:var(--bg-soft);color:var(--brand);border:1px solid var(--border);transition:transform .15s ease,background-color .2s ease}
+.wn-scope .wn-icon-btn>svg{fill:currentColor;stroke:none}
+.wn-scope .wn-icon-btn:active{transform:scale(.94)}
+.wn-scope .wn-drawer{position:fixed;top:0;right:0;height:100dvh;width:min(90vw,400px);z-index:9999;display:flex;flex-direction:column;transform:translateX(100%);visibility:hidden;box-shadow:-5px 0 30px rgba(16,24,40,.15);transition:transform .6s var(--ease-out-expo),visibility 0s .6s;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.wn-scope #wn-nav-toggle:checked ~ .wn-drawer{transform:translateX(0);visibility:visible;transition-delay:0s}
+.wn-scope .wn-drawer-top{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid rgba(3,73,239,.1);flex-shrink:0}
+.wn-scope .wn-brand-drawer{max-width:150px;display:block}
+.wn-scope .wn-brand-drawer img{height:auto;width:100%;display:block}
+.wn-scope .wn-close{background:rgba(3,73,239,.08);border:1px solid rgba(3,73,239,.12);color:var(--brand)}
+.wn-scope .wn-mega{padding:16px;overflow-y:auto;flex:1 1 auto;-webkit-overflow-scrolling:touch}
+.wn-scope details.wn-accordion{margin:0 0 10px;border-radius:16px}
+.wn-scope .wn-accordion-header{list-style:none;display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:600;font-size:16px;padding:12px;color:var(--ink);background:var(--bg);border:1px solid var(--border);border-radius:12px}
+.wn-scope .wn-accordion-header::-webkit-details-marker{display:none}
+.wn-scope .wn-ico{width:34px;height:34px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid var(--border);color:var(--muted);flex-shrink:0;transition:all .3s var(--ease-out-expo)}
+.wn-scope .wn-ico svg{width:18px;height:18px;transition:transform .3s var(--ease-out-expo)}
+.wn-scope .wn-chevron{width:24px;height:24px;color:#9ca3af;margin-left:auto;transition:transform .35s var(--ease-out-expo),color .2s}
+.wn-scope details[open]>summary.wn-accordion-header{color:var(--brand);border-color:#A5B4FC}
+.wn-scope details[open]>summary .wn-ico{background:var(--brand);border-color:var(--brand);color:#fff}
+.wn-scope details[open]>summary .wn-ico svg{transform:scale(.9) rotate(5deg)}
+.wn-scope details[open]>summary .wn-chevron{transform:rotate(90deg);color:var(--brand)}
+.wn-scope .wn-accordion-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease-out-expo)}
+.wn-scope details[open]>.wn-accordion-body{grid-template-rows:1fr}
+.wn-scope .wn-accordion-body>ul{overflow:hidden;list-style:none;padding:8px 16px 16px;margin:8px 0 0 0;border-image:linear-gradient(to right,transparent,var(--border) 20%,var(--border) 80%,transparent) 1;border-style:solid;border-width:1px 0 0 0}
+.wn-scope .wn-accordion-body a{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;font-size:15px;color:#374151;transition:transform .18s ease,color .15s ease,background-color .15s ease}
+.wn-scope .wn-accordion-body a:hover{background:rgba(255,255,255,.7);color:var(--brand);transform:translateX(4px)}
+.wn-scope .wn-accordion-body a svg{width:18px;height:18px;color:var(--muted);transition:color .15s;flex-shrink:0}
+.wn-scope .wn-accordion-body a:hover svg{color:var(--brand)}
+.wn-scope .wn-accordion-body a.is-active{background:var(--bg);color:var(--brand);font-weight:600;box-shadow:0 4px 10px rgba(0,0,0,.05)}
+.wn-scope .wn-accordion-body a.is-active svg{color:var(--brand)}
+.wn-scope .wn-drawer-footer{margin-top:auto;flex-shrink:0;background:rgba(255,255,255,.7);box-shadow:0 -5px 20px -5px rgba(0,0,0,.05)}
+.wn-scope .wn-static-links{padding:16px 16px 8px;display:flex;flex-direction:column;gap:8px}
+.wn-scope .wn-btn-cta{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;background:var(--bg);color:var(--brand);border:1px solid var(--border);border-radius:14px;font-weight:600;transition:transform .15s ease,box-shadow .2s ease,background .2s ease}
+.wn-scope .wn-btn-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(37,99,235,.18)}
+.wn-scope .wn-btn-cta svg{width:18px;height:18px}
+@keyframes wn-pulse{0%,100%{transform:scale(1);box-shadow:0 4px 14px rgba(3,73,239,.25)}50%{transform:scale(1.03);box-shadow:0 8px 22px rgba(37,99,235,.35)}}
+.wn-scope .wn-cta-primary{background:linear-gradient(45deg,var(--brand-light),var(--brand));color:#fff;border:none;animation:wn-pulse 2.5s infinite var(--ease-in-out)}
+.wn-scope .wn-footer{padding:8px 16px 16px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:13px;border-top:1px solid rgba(3,73,239,.1)}
+.wn-scope .wn-footer a{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.wn-scope *{transition:none!important;animation:none!important}}
+.wn-scope .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
